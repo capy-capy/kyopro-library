@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
 #include <bits/stdc++.h>
-#define rep(i, n) for (int i = 0; (i) < (int)(n); ++ (i))
+#define rep(i, N) for (int i = 0; (i) < (int)(N); ++ (i))
 #define all(x) std::begin(x), std::end(x)
 using namespace std;
 

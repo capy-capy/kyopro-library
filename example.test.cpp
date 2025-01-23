@@ -8,7 +8,7 @@ int main() {
     int n; cin >> n;
     vector<int> s(n);
     rep (i, n) {
-        cin >> s[i];
+        cin >> s[i];;
     }
     int q; cin >> q;
     int cnt = 0;

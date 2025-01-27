@@ -2,19 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: Cpp/math/MontgomeryModInt.hpp
     title: Cpp/math/MontgomeryModInt.hpp
   - icon: ':warning:'
     path: Cpp/math/PrimitiveRoot.hpp
     title: Cpp/math/PrimitiveRoot.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: Cpp/math/is_Prime.hpp
     title: Cpp/math/is_Prime.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/is_Prime.test.cpp
+    title: verify/is_Prime.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "Cpp/common/base.hpp"
@@ -201,8 +204,9 @@ data:
   - Cpp/math/is_Prime.hpp
   - Cpp/math/MontgomeryModInt.hpp
   timestamp: '2025-01-27 23:24:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/is_Prime.test.cpp
 documentation_of: Cpp/common/base.hpp
 layout: document
 redirect_from:

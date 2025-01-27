@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: Cpp/common/base.hpp
     title: Cpp/common/base.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: Cpp/math/MontgomeryModInt.hpp
     title: Cpp/math/MontgomeryModInt.hpp
   _extendedRequiredBy: []

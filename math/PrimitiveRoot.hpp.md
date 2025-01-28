@@ -8,10 +8,13 @@ data:
     path: math/MontgomeryModInt.hpp
     title: math/MontgomeryModInt.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/PrimitiveRoot.test.cpp
+    title: test/PrimitiveRoot.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -82,10 +85,11 @@ data:
     \    for(ll i = 3;i*i<=num;i+=2){\n        if(num%i==0){\n            ret.pb(i);\n\
     \            while(num%i==0)num/=i;\n        }\n    }\n    if(num>1)ret.pb(num);\n\
     \    return ret;\n}\nmt19937 mt(12345); \nuniform_int_distribution<ll> rnd(0,\
-    \ INF);\nusing Mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    auto element\
-    \ = divisor(N);\n    ll i= 1;\n    while(true){\n        i++;\n        bool ok\
-    \ = true;\n        for(auto&v:element){\n            auto x = Mint(i).pow(N/v);\n\
-    \            if(x==1&&v<N){\n                ok = false;\n                break;\n\
+    \ INF);\nusing mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    \n   \
+    \ if(N==2)return 1LL;\n    auto element = divisor(N-1);\n    mint::set_mod(N);\n\
+    \    ll i= 1;\n    while(true){\n        i = rnd(mt)%(N-2)+2;\n        bool ok\
+    \ = true;\n        for(auto&v:element){\n            auto x = mint(i).pow((N-1)/v);\n\
+    \            if(x==1&&v<N-1){\n                ok = false;\n                break;\n\
     \            }\n        }   \n        if(ok){\n            return i;\n       \
     \ }\n    }\n}\n"
   code: "#include \"MontgomeryModInt.hpp\"\nvector<ll> divisor(ll num){\n    vector<ll>ret;\n\
@@ -93,10 +97,11 @@ data:
     \    for(ll i = 3;i*i<=num;i+=2){\n        if(num%i==0){\n            ret.pb(i);\n\
     \            while(num%i==0)num/=i;\n        }\n    }\n    if(num>1)ret.pb(num);\n\
     \    return ret;\n}\nmt19937 mt(12345); \nuniform_int_distribution<ll> rnd(0,\
-    \ INF);\nusing Mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    auto element\
-    \ = divisor(N);\n    ll i= 1;\n    while(true){\n        i++;\n        bool ok\
-    \ = true;\n        for(auto&v:element){\n            auto x = Mint(i).pow(N/v);\n\
-    \            if(x==1&&v<N){\n                ok = false;\n                break;\n\
+    \ INF);\nusing mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    \n   \
+    \ if(N==2)return 1LL;\n    auto element = divisor(N-1);\n    mint::set_mod(N);\n\
+    \    ll i= 1;\n    while(true){\n        i = rnd(mt)%(N-2)+2;\n        bool ok\
+    \ = true;\n        for(auto&v:element){\n            auto x = mint(i).pow((N-1)/v);\n\
+    \            if(x==1&&v<N-1){\n                ok = false;\n                break;\n\
     \            }\n        }   \n        if(ok){\n            return i;\n       \
     \ }\n    }\n}"
   dependsOn:
@@ -105,9 +110,10 @@ data:
   isVerificationFile: false
   path: math/PrimitiveRoot.hpp
   requiredBy: []
-  timestamp: '2025-01-28 20:58:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2025-01-28 22:04:06+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/PrimitiveRoot.test.cpp
 documentation_of: math/PrimitiveRoot.hpp
 layout: document
 redirect_from:

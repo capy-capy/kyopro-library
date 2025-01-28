@@ -5,13 +5,16 @@ data:
     path: common/base.hpp
     title: common/base.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/PrimitiveRoot.hpp
     title: math/PrimitiveRoot.hpp
   - icon: ':heavy_check_mark:'
     path: math/is_Prime.hpp
     title: math/is_Prime.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/PrimitiveRoot.test.cpp
+    title: test/PrimitiveRoot.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/is_Prime.test.cpp
     title: test/is_Prime.test.cpp
@@ -133,6 +136,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/is_Prime.test.cpp
+  - test/PrimitiveRoot.test.cpp
 documentation_of: math/MontgomeryModInt.hpp
 layout: document
 redirect_from:

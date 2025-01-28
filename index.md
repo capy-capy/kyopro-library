@@ -11,7 +11,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/MontgomeryModInt.hpp
       title: math/MontgomeryModInt.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/PrimitiveRoot.hpp
       title: math/PrimitiveRoot.hpp
     - icon: ':heavy_check_mark:'
@@ -25,6 +25,9 @@ data:
       title: example.test.cpp
   - name: test
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/PrimitiveRoot.test.cpp
+      title: test/PrimitiveRoot.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/is_Prime.test.cpp
       title: test/is_Prime.test.cpp

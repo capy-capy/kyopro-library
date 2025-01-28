@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/primality_test"
 
-#include "../Cpp/common/base.hpp"
+#include "../common/base.hpp"
 
-#include "../Cpp/math/is_Prime.hpp"
+#include "../math/is_Prime.hpp"
 
 int main() {
     int Q;

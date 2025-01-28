@@ -16,16 +16,18 @@ vector<ll> divisor(ll num){
 }
 mt19937 mt(12345); 
 uniform_int_distribution<ll> rnd(0, INF);
-using Mint = MontgomeryModInt64;
+using mint = MontgomeryModInt64;
 ll PrimitiveRoot(ll N){
-    auto element = divisor(N);
+    if(N==2)return 1LL;
+    auto element = divisor(N-1);
+    mint::set_mod(N);
     ll i= 1;
     while(true){
-        i++;
+        i = rnd(mt)%(N-2)+2;
         bool ok = true;
         for(auto&v:element){
-            auto x = Mint(i).pow(N/v);
-            if(x==1&&v<N){
+            auto x = mint(i).pow((N-1)/v);
+            if(x==1&&v<N-1){
                 ok = false;
                 break;
             }

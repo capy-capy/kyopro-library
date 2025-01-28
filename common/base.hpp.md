@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: Cpp/math/MontgomeryModInt.hpp
-    title: Cpp/math/MontgomeryModInt.hpp
+    path: math/MontgomeryModInt.hpp
+    title: math/MontgomeryModInt.hpp
   - icon: ':warning:'
-    path: Cpp/math/PrimitiveRoot.hpp
-    title: Cpp/math/PrimitiveRoot.hpp
+    path: math/PrimitiveRoot.hpp
+    title: math/PrimitiveRoot.hpp
   - icon: ':heavy_check_mark:'
-    path: Cpp/math/is_Prime.hpp
-    title: Cpp/math/is_Prime.hpp
+    path: math/is_Prime.hpp
+    title: math/is_Prime.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/is_Prime.test.cpp
-    title: verify/is_Prime.test.cpp
+    path: test/is_Prime.test.cpp
+    title: test/is_Prime.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 2 "Cpp/common/base.hpp"
+  bundledCode: '#line 2 "common/base.hpp"
 
     #include <bits/stdc++.h>
 
@@ -198,19 +198,19 @@ data:
     '
   dependsOn: []
   isVerificationFile: false
-  path: Cpp/common/base.hpp
+  path: common/base.hpp
   requiredBy:
-  - Cpp/math/PrimitiveRoot.hpp
-  - Cpp/math/is_Prime.hpp
-  - Cpp/math/MontgomeryModInt.hpp
-  timestamp: '2025-01-27 23:24:44+09:00'
+  - math/PrimitiveRoot.hpp
+  - math/is_Prime.hpp
+  - math/MontgomeryModInt.hpp
+  timestamp: '2025-01-28 20:58:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/is_Prime.test.cpp
-documentation_of: Cpp/common/base.hpp
+  - test/is_Prime.test.cpp
+documentation_of: common/base.hpp
 layout: document
 redirect_from:
-- /library/Cpp/common/base.hpp
-- /library/Cpp/common/base.hpp.html
-title: Cpp/common/base.hpp
+- /library/common/base.hpp
+- /library/common/base.hpp.html
+title: common/base.hpp
 ---

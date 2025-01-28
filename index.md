@@ -1,32 +1,32 @@
 ---
 data:
   libraryCategories:
-  - name: Cpp/common
+  - name: common
     pages:
     - icon: ':heavy_check_mark:'
-      path: Cpp/common/base.hpp
-      title: Cpp/common/base.hpp
-  - name: Cpp/math
+      path: common/base.hpp
+      title: common/base.hpp
+  - name: math
     pages:
     - icon: ':heavy_check_mark:'
-      path: Cpp/math/MontgomeryModInt.hpp
-      title: Cpp/math/MontgomeryModInt.hpp
+      path: math/MontgomeryModInt.hpp
+      title: math/MontgomeryModInt.hpp
     - icon: ':warning:'
-      path: Cpp/math/PrimitiveRoot.hpp
-      title: Cpp/math/PrimitiveRoot.hpp
+      path: math/PrimitiveRoot.hpp
+      title: math/PrimitiveRoot.hpp
     - icon: ':heavy_check_mark:'
-      path: Cpp/math/is_Prime.hpp
-      title: Cpp/math/is_Prime.hpp
+      path: math/is_Prime.hpp
+      title: math/is_Prime.hpp
   verificationCategories:
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
       path: example.test.cpp
       title: example.test.cpp
-  - name: verify
+  - name: test
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/is_Prime.test.cpp
-      title: verify/is_Prime.test.cpp
+      path: test/is_Prime.test.cpp
+      title: test/is_Prime.test.cpp
 layout: toppage
 ---

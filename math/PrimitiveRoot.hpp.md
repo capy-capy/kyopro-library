@@ -2,22 +2,19 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: Cpp/common/base.hpp
-    title: Cpp/common/base.hpp
+    path: common/base.hpp
+    title: common/base.hpp
   - icon: ':heavy_check_mark:'
-    path: Cpp/math/MontgomeryModInt.hpp
-    title: Cpp/math/MontgomeryModInt.hpp
+    path: math/MontgomeryModInt.hpp
+    title: math/MontgomeryModInt.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/is_Prime.test.cpp
-    title: verify/is_Prime.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"Cpp/common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 2 \"common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
     \ GCC optimize(\"unroll-loops\")\n#define ll long long\n#define ld long double\n\
     #define fi first\n#define se second\n#define pi M_PI\n#define pb push_back\n#define\
@@ -41,8 +38,8 @@ data:
     \ T> void YesNo(T b){if(b)cout<<\"Yes\"<<'\\n';else cout<<\"No\"<<'\\n';}\nll\
     \ gcd(ll a,ll b){if(b==0)return a;return gcd(b,a%b);}\nll modpow(ll a,ll b,ll\
     \ z){ll res=1;a%=z;while(b){if(b&1)res=res*a%z;a=a*a%z;b>>=1;}return res;}\n#line\
-    \ 3 \"Cpp/math/MontgomeryModInt.hpp\"\nstruct MontgomeryModInt64 {\n    using\
-    \ mint = MontgomeryModInt64;\n    using u64 = uint64_t;\n    using u128 = __uint128_t;\n\
+    \ 3 \"math/MontgomeryModInt.hpp\"\nstruct MontgomeryModInt64 {\n    using mint\
+    \ = MontgomeryModInt64;\n    using u64 = uint64_t;\n    using u128 = __uint128_t;\n\
     \    // static menber\n    static u64 MOD;\n    static u64 INV_MOD;  // INV_MOD\
     \ * MOD \u2261 1 (mod 2^64)\n    static u64 T128;  // 2^128 (mod MOD)\n    //\
     \ inner value\n    u64 val;\n    // constructor\n    MontgomeryModInt64() : val(0)\
@@ -80,44 +77,41 @@ data:
     \ long n) {\n        return r.pow(n);\n    }\n    friend mint modinv(const mint\
     \ &r) {\n        return r.inv();\n    }\n};\ntypename MontgomeryModInt64::u64\n\
     MontgomeryModInt64::MOD, MontgomeryModInt64::INV_MOD, MontgomeryModInt64::T128;\n\
-    #line 2 \"Cpp/math/is_Prime.hpp\"\n// Miller-Rabin\nbool MillerRabin(long long\
-    \ N, vector<long long> A) {\n    using mint = MontgomeryModInt64;\n    mint::set_mod(N);\n\
-    \    long long s = 0, d = N - 1;\n    while (d % 2 == 0) {\n        ++s;\n   \
-    \     d >>= 1;\n    }\n    for (auto a : A) {\n        if (N <= a) return true;\n\
-    \        mint x = mint(a).pow(d);\n        if (x != 1) {\n            long long\
-    \ t;\n            for (t = 0; t < s; ++t) {\n                if (x == N - 1) break;\n\
-    \                x *= x;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}\nbool is_prime(long long N) {\n    if (N\
-    \ <= 1) return false;\n    else if (N == 2) return true;\n    else if (N % 2 ==\
-    \ 0) return false;\n    else if (N < 4759123141LL) return MillerRabin(N, {2, 7,\
-    \ 61});\n    else return MillerRabin(N, {2, 325, 9375, 28178, 450775, 9780504,\
-    \ 1795265022});\n}\n"
-  code: "#include \"MontgomeryModInt.hpp\"\n// Miller-Rabin\nbool MillerRabin(long\
-    \ long N, vector<long long> A) {\n    using mint = MontgomeryModInt64;\n    mint::set_mod(N);\n\
-    \    long long s = 0, d = N - 1;\n    while (d % 2 == 0) {\n        ++s;\n   \
-    \     d >>= 1;\n    }\n    for (auto a : A) {\n        if (N <= a) return true;\n\
-    \        mint x = mint(a).pow(d);\n        if (x != 1) {\n            long long\
-    \ t;\n            for (t = 0; t < s; ++t) {\n                if (x == N - 1) break;\n\
-    \                x *= x;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}\nbool is_prime(long long N) {\n    if (N\
-    \ <= 1) return false;\n    else if (N == 2) return true;\n    else if (N % 2 ==\
-    \ 0) return false;\n    else if (N < 4759123141LL) return MillerRabin(N, {2, 7,\
-    \ 61});\n    else return MillerRabin(N, {2, 325, 9375, 28178, 450775, 9780504,\
-    \ 1795265022});\n}"
+    #line 2 \"math/PrimitiveRoot.hpp\"\nvector<ll> divisor(ll num){\n    vector<ll>ret;\n\
+    \    if(num%2==0){\n        while(num%2==0)num/=2;\n        ret={2};\n    }\n\
+    \    for(ll i = 3;i*i<=num;i+=2){\n        if(num%i==0){\n            ret.pb(i);\n\
+    \            while(num%i==0)num/=i;\n        }\n    }\n    if(num>1)ret.pb(num);\n\
+    \    return ret;\n}\nmt19937 mt(12345); \nuniform_int_distribution<ll> rnd(0,\
+    \ INF);\nusing Mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    auto element\
+    \ = divisor(N);\n    ll i= 1;\n    while(true){\n        i++;\n        bool ok\
+    \ = true;\n        for(auto&v:element){\n            auto x = Mint(i).pow(N/v);\n\
+    \            if(x==1&&v<N){\n                ok = false;\n                break;\n\
+    \            }\n        }   \n        if(ok){\n            return i;\n       \
+    \ }\n    }\n}\n"
+  code: "#include \"MontgomeryModInt.hpp\"\nvector<ll> divisor(ll num){\n    vector<ll>ret;\n\
+    \    if(num%2==0){\n        while(num%2==0)num/=2;\n        ret={2};\n    }\n\
+    \    for(ll i = 3;i*i<=num;i+=2){\n        if(num%i==0){\n            ret.pb(i);\n\
+    \            while(num%i==0)num/=i;\n        }\n    }\n    if(num>1)ret.pb(num);\n\
+    \    return ret;\n}\nmt19937 mt(12345); \nuniform_int_distribution<ll> rnd(0,\
+    \ INF);\nusing Mint = MontgomeryModInt64;\nll PrimitiveRoot(ll N){\n    auto element\
+    \ = divisor(N);\n    ll i= 1;\n    while(true){\n        i++;\n        bool ok\
+    \ = true;\n        for(auto&v:element){\n            auto x = Mint(i).pow(N/v);\n\
+    \            if(x==1&&v<N){\n                ok = false;\n                break;\n\
+    \            }\n        }   \n        if(ok){\n            return i;\n       \
+    \ }\n    }\n}"
   dependsOn:
-  - Cpp/math/MontgomeryModInt.hpp
-  - Cpp/common/base.hpp
+  - math/MontgomeryModInt.hpp
+  - common/base.hpp
   isVerificationFile: false
-  path: Cpp/math/is_Prime.hpp
+  path: math/PrimitiveRoot.hpp
   requiredBy: []
-  timestamp: '2025-01-27 23:24:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/is_Prime.test.cpp
-documentation_of: Cpp/math/is_Prime.hpp
+  timestamp: '2025-01-28 20:58:20+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: math/PrimitiveRoot.hpp
 layout: document
 redirect_from:
-- /library/Cpp/math/is_Prime.hpp
-- /library/Cpp/math/is_Prime.hpp.html
-title: Cpp/math/is_Prime.hpp
+- /library/math/PrimitiveRoot.hpp
+- /library/math/PrimitiveRoot.hpp.html
+title: math/PrimitiveRoot.hpp
 ---

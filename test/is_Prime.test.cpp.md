@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: Cpp/common/base.hpp
-    title: Cpp/common/base.hpp
+    path: common/base.hpp
+    title: common/base.hpp
   - icon: ':heavy_check_mark:'
-    path: Cpp/math/MontgomeryModInt.hpp
-    title: Cpp/math/MontgomeryModInt.hpp
+    path: math/MontgomeryModInt.hpp
+    title: math/MontgomeryModInt.hpp
   - icon: ':heavy_check_mark:'
-    path: Cpp/math/is_Prime.hpp
-    title: Cpp/math/is_Prime.hpp
+    path: math/is_Prime.hpp
+    title: math/is_Prime.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -20,11 +20,11 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/primality_test
     links:
     - https://judge.yosupo.jp/problem/primality_test
-  bundledCode: "#line 1 \"verify/is_Prime.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\
-    \n\n#line 2 \"Cpp/common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
-    \ GCC optimize(\"unroll-loops\")\n#define ll long long\n#define ld long double\n\
-    #define fi first\n#define se second\n#define pi M_PI\n#define pb push_back\n#define\
+  bundledCode: "#line 1 \"test/is_Prime.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\
+    \n\n#line 2 \"common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    // #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC\
+    \ optimize(\"unroll-loops\")\n#define ll long long\n#define ld long double\n#define\
+    \ fi first\n#define se second\n#define pi M_PI\n#define pb push_back\n#define\
     \ eb emplace_back\n#define rep(i,N) for(int i=0;i<(ll)N;i++)\n#define rrep(i,N)\
     \ for(int i=N-1;i>=0;i--)\n#define REP(i,s,e) for(int i=s;i<(ll)e;i++)\n#define\
     \ RREP(i,s,e) for(int i=e-1;i>=(ll)s;i--)\n#define vecin(N,A) rep(i,N) cin>>A[i]\n\
@@ -45,28 +45,28 @@ data:
     \ T> void YesNo(T b){if(b)cout<<\"Yes\"<<'\\n';else cout<<\"No\"<<'\\n';}\nll\
     \ gcd(ll a,ll b){if(b==0)return a;return gcd(b,a%b);}\nll modpow(ll a,ll b,ll\
     \ z){ll res=1;a%=z;while(b){if(b&1)res=res*a%z;a=a*a%z;b>>=1;}return res;}\n#line\
-    \ 4 \"verify/is_Prime.test.cpp\"\n\n#line 3 \"Cpp/math/MontgomeryModInt.hpp\"\n\
-    struct MontgomeryModInt64 {\n    using mint = MontgomeryModInt64;\n    using u64\
-    \ = uint64_t;\n    using u128 = __uint128_t;\n    // static menber\n    static\
-    \ u64 MOD;\n    static u64 INV_MOD;  // INV_MOD * MOD \u2261 1 (mod 2^64)\n  \
-    \  static u64 T128;  // 2^128 (mod MOD)\n    // inner value\n    u64 val;\n  \
-    \  // constructor\n    MontgomeryModInt64() : val(0) { }\n    MontgomeryModInt64(long\
-    \ long v) : val(reduce((u128(v) + MOD) * T128)) { }\n    u64 get() const {\n \
-    \       u64 res = reduce(val);\n        return res >= MOD ? res - MOD : res;\n\
-    \    }\n    // mod getter and setter\n    static u64 get_mod() { return MOD; }\n\
-    \    static void set_mod(u64 mod) {\n        assert(mod < (1LL << 62));\n    \
-    \    assert((mod & 1));\n        MOD = mod;\n        T128 = -u128(mod) % mod;\n\
-    \        INV_MOD = get_inv_mod();\n    }\n    static u64 get_inv_mod() {\n   \
-    \     u64 res = MOD;\n        for (int i = 0; i < 5; ++i) res *= 2 - MOD * res;\n\
-    \        return res;\n    }\n    static u64 reduce(const u128 &v) {\n        return\
-    \ (v + u128(u64(v) * u64(-INV_MOD)) * MOD) >> 64;\n    }\n    // arithmetic operators\n\
-    \    mint operator - () const { return mint() - mint(*this); }\n    mint operator\
-    \ + (const mint &r) const { return mint(*this) += r; }\n    mint operator - (const\
-    \ mint &r) const { return mint(*this) -= r; }\n    mint operator * (const mint\
-    \ &r) const { return mint(*this) *= r; }\n    mint operator / (const mint &r)\
-    \ const { return mint(*this) /= r; }\n    mint& operator += (const mint &r) {\n\
-    \        if ((val += r.val) >= 2 * MOD) val -= 2 * MOD;\n        return *this;\n\
-    \    }\n    mint& operator -= (const mint &r) {\n        if ((val += 2 * MOD -\
+    \ 4 \"test/is_Prime.test.cpp\"\n\n#line 3 \"math/MontgomeryModInt.hpp\"\nstruct\
+    \ MontgomeryModInt64 {\n    using mint = MontgomeryModInt64;\n    using u64 =\
+    \ uint64_t;\n    using u128 = __uint128_t;\n    // static menber\n    static u64\
+    \ MOD;\n    static u64 INV_MOD;  // INV_MOD * MOD \u2261 1 (mod 2^64)\n    static\
+    \ u64 T128;  // 2^128 (mod MOD)\n    // inner value\n    u64 val;\n    // constructor\n\
+    \    MontgomeryModInt64() : val(0) { }\n    MontgomeryModInt64(long long v) :\
+    \ val(reduce((u128(v) + MOD) * T128)) { }\n    u64 get() const {\n        u64\
+    \ res = reduce(val);\n        return res >= MOD ? res - MOD : res;\n    }\n  \
+    \  // mod getter and setter\n    static u64 get_mod() { return MOD; }\n    static\
+    \ void set_mod(u64 mod) {\n        assert(mod < (1LL << 62));\n        assert((mod\
+    \ & 1));\n        MOD = mod;\n        T128 = -u128(mod) % mod;\n        INV_MOD\
+    \ = get_inv_mod();\n    }\n    static u64 get_inv_mod() {\n        u64 res = MOD;\n\
+    \        for (int i = 0; i < 5; ++i) res *= 2 - MOD * res;\n        return res;\n\
+    \    }\n    static u64 reduce(const u128 &v) {\n        return (v + u128(u64(v)\
+    \ * u64(-INV_MOD)) * MOD) >> 64;\n    }\n    // arithmetic operators\n    mint\
+    \ operator - () const { return mint() - mint(*this); }\n    mint operator + (const\
+    \ mint &r) const { return mint(*this) += r; }\n    mint operator - (const mint\
+    \ &r) const { return mint(*this) -= r; }\n    mint operator * (const mint &r)\
+    \ const { return mint(*this) *= r; }\n    mint operator / (const mint &r) const\
+    \ { return mint(*this) /= r; }\n    mint& operator += (const mint &r) {\n    \
+    \    if ((val += r.val) >= 2 * MOD) val -= 2 * MOD;\n        return *this;\n \
+    \   }\n    mint& operator -= (const mint &r) {\n        if ((val += 2 * MOD -\
     \ r.val) >= 2 * MOD) val -= 2 * MOD;\n        return *this;\n    }\n    mint&\
     \ operator *= (const mint &r) {\n        val = reduce(u128(val) * r.val);\n  \
     \      return *this;\n    }\n    mint& operator /= (const mint &r) {\n       \
@@ -84,7 +84,7 @@ data:
     \    }\n    friend mint modpow(const mint &r, long long n) {\n        return r.pow(n);\n\
     \    }\n    friend mint modinv(const mint &r) {\n        return r.inv();\n   \
     \ }\n};\ntypename MontgomeryModInt64::u64\nMontgomeryModInt64::MOD, MontgomeryModInt64::INV_MOD,\
-    \ MontgomeryModInt64::T128;\n#line 2 \"Cpp/math/is_Prime.hpp\"\n// Miller-Rabin\n\
+    \ MontgomeryModInt64::T128;\n#line 2 \"math/is_Prime.hpp\"\n// Miller-Rabin\n\
     bool MillerRabin(long long N, vector<long long> A) {\n    using mint = MontgomeryModInt64;\n\
     \    mint::set_mod(N);\n    long long s = 0, d = N - 1;\n    while (d % 2 == 0)\
     \ {\n        ++s;\n        d >>= 1;\n    }\n    for (auto a : A) {\n        if\
@@ -95,27 +95,27 @@ data:
     \ is_prime(long long N) {\n    if (N <= 1) return false;\n    else if (N == 2)\
     \ return true;\n    else if (N % 2 == 0) return false;\n    else if (N < 4759123141LL)\
     \ return MillerRabin(N, {2, 7, 61});\n    else return MillerRabin(N, {2, 325,\
-    \ 9375, 28178, 450775, 9780504, 1795265022});\n}\n#line 6 \"verify/is_Prime.test.cpp\"\
+    \ 9375, 28178, 450775, 9780504, 1795265022});\n}\n#line 6 \"test/is_Prime.test.cpp\"\
     \n\nint main() {\n    int Q;\n    cin >> Q;\n    while(Q--) {\n        ll N;\n\
     \        cin >> N;\n        YesNo(is_prime(N));\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\n\n#include\
-    \ \"../Cpp/common/base.hpp\"\n\n#include \"../Cpp/math/is_Prime.hpp\"\n\nint main()\
-    \ {\n    int Q;\n    cin >> Q;\n    while(Q--) {\n        ll N;\n        cin >>\
-    \ N;\n        YesNo(is_prime(N));\n    }\n}"
+    \ \"../common/base.hpp\"\n\n#include \"../math/is_Prime.hpp\"\n\nint main() {\n\
+    \    int Q;\n    cin >> Q;\n    while(Q--) {\n        ll N;\n        cin >> N;\n\
+    \        YesNo(is_prime(N));\n    }\n}"
   dependsOn:
-  - Cpp/common/base.hpp
-  - Cpp/math/is_Prime.hpp
-  - Cpp/math/MontgomeryModInt.hpp
+  - common/base.hpp
+  - math/is_Prime.hpp
+  - math/MontgomeryModInt.hpp
   isVerificationFile: true
-  path: verify/is_Prime.test.cpp
+  path: test/is_Prime.test.cpp
   requiredBy: []
-  timestamp: '2025-01-27 23:44:35+09:00'
+  timestamp: '2025-01-28 20:58:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/is_Prime.test.cpp
+documentation_of: test/is_Prime.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/is_Prime.test.cpp
-- /verify/verify/is_Prime.test.cpp.html
-title: verify/is_Prime.test.cpp
+- /verify/test/is_Prime.test.cpp
+- /verify/test/is_Prime.test.cpp.html
+title: test/is_Prime.test.cpp
 ---

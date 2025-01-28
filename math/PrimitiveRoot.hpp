@@ -18,6 +18,7 @@ mt19937 mt(12345);
 uniform_int_distribution<ll> rnd(0, INF);
 using mint = MontgomeryModInt64;
 ll PrimitiveRoot(ll N){
+    
     if(N==2)return 1LL;
     auto element = divisor(N-1);
     mint::set_mod(N);

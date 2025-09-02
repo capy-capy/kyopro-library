@@ -18,16 +18,15 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"common/base.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
-    \ GCC optimize(\"unroll-loops\")\n#define ll long long\n#define ld long double\n\
-    #define fi first\n#define se second\n#define pi M_PI\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define rep(i,N) for(int i=0;i<(ll)N;i++)\n#define rrep(i,N)\
-    \ for(int i=N-1;i>=0;i--)\n#define REP(i,s,e) for(int i=s;i<(ll)e;i++)\n#define\
-    \ RREP(i,s,e) for(int i=e-1;i>=(ll)s;i--)\n#define vecin(N,A) rep(i,N) cin>>A[i]\n\
-    #define vvecin(H,W,A) rep(i,H) rep(j,W) cin>>A[i][j]\n#define lb(a,x) (lower_bound(all(a),(x))-a.begin())\n\
-    #define ub(a,x) (upper_bound(all(a),(x))-a.begin())\n#define p_que(T) priority_queue<T>\n\
-    #define sp_que(T) priority_queue<T,vector<T>,greater<T>>\n#define PP pair<ll,ll>\n\
-    #define PPL pair<ll,pair<ll,ll>>\n#define all(x) x.begin(),x.end()\n#define rsort(x)\
+    \ std;\n#define ll long long\n#define ld long double\n#define fi first\n#define\
+    \ se second\n#define pi M_PI\n#define pb push_back\n#define eb emplace_back\n\
+    #define rep(i,N) for(int i=0;i<(ll)N;i++)\n#define rrep(i,N) for(int i=N-1;i>=0;i--)\n\
+    #define REP(i,s,e) for(int i=s;i<(ll)e;i++)\n#define RREP(i,s,e) for(int i=e-1;i>=(ll)s;i--)\n\
+    #define vecin(N,A) rep(i,N) cin>>A[i]\n#define vvecin(H,W,A) rep(i,H) rep(j,W)\
+    \ cin>>A[i][j]\n#define lb(a,x) (lower_bound(all(a),(x))-a.begin())\n#define ub(a,x)\
+    \ (upper_bound(all(a),(x))-a.begin())\n#define p_que(T) priority_queue<T>\n#define\
+    \ sp_que(T) priority_queue<T,vector<T>,greater<T>>\n#define PP pair<ll,ll>\n#define\
+    \ PPL pair<ll,pair<ll,ll>>\n#define all(x) x.begin(),x.end()\n#define rsort(x)\
     \ {sort(all(x));reverse(all(x));}\n#define dupli(x) {sort(all(x));x.erase(unique(all(x)),x.end());}\n\
     #define popcnt __builtin_popcountll\nconst ll MOD = 998244353;\nconst ll INF =\
     \ LLONG_MAX/4;\nconst int inf = INT32_MAX/2;\nconst long double EPS = 1e-10;\n\
@@ -110,7 +109,7 @@ data:
   isVerificationFile: false
   path: math/is_Prime.hpp
   requiredBy: []
-  timestamp: '2025-01-28 20:58:20+09:00'
+  timestamp: '2025-09-02 19:18:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/is_Prime.test.cpp

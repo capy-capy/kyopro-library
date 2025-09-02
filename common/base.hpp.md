@@ -29,12 +29,6 @@ data:
 
     using namespace std;
 
-    // #pragma GCC target("avx2")
-
-    // #pragma GCC optimize("O3")
-
-    // #pragma GCC optimize("unroll-loops")
-
     #define ll long long
 
     #define ld long double
@@ -117,12 +111,6 @@ data:
 
     using namespace std;
 
-    // #pragma GCC target("avx2")
-
-    // #pragma GCC optimize("O3")
-
-    // #pragma GCC optimize("unroll-loops")
-
     #define ll long long
 
     #define ld long double
@@ -203,14 +191,14 @@ data:
   isVerificationFile: false
   path: common/base.hpp
   requiredBy:
+  - math/MontgomeryModInt.hpp
   - math/PrimitiveRoot.hpp
   - math/is_Prime.hpp
-  - math/MontgomeryModInt.hpp
-  timestamp: '2025-01-28 20:58:20+09:00'
+  timestamp: '2025-09-02 19:18:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/is_Prime.test.cpp
   - test/PrimitiveRoot.test.cpp
+  - test/is_Prime.test.cpp
 documentation_of: common/base.hpp
 layout: document
 redirect_from:
